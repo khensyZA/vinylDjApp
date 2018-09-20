@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { ViewDetailsPage } from './../view-details/view-details';
+
 
 @Component({
   selector: 'page-home',
@@ -26,6 +28,10 @@ export class HomePage {
          });
       }
   }
+   goToDetails(){
+    this.navCtrl.push(ViewDetailsPage);
+  }
+
 
   onSearch(event){
     
