@@ -1,5 +1,7 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import firebase from 'firebase/app';
+import 'firebase/auth';
+import 'firebase/database'; 
 
 /*
   Generated class for the AuthProvider provider.
@@ -9,9 +11,14 @@ import { Injectable } from '@angular/core';
 */
 @Injectable()
 export class AuthProvider {
-
-  constructor(public http: HttpClient) {
-    console.log('Hello AuthProvider Provider');
+  constructor() {
   }
+signIn(email:string,password:string):Promise<any>{
+  return firebase.auth().signInWithEmailAndPassword(email,password);
+}
+
+resetPassword(email:string):Promise<any>{
+  return firebase.auth().sendPasswordResetEmail(email);
+}
 
 }
