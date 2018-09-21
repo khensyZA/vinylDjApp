@@ -2,9 +2,13 @@ import { SignupPage } from './../pages/signup/signup';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+<<<<<<< HEAD
 import * as firebase from 'firebase';
 import {AngularFireModule} from 'angularfire2';
 
+=======
+import { ViewDetailsPage } from './../pages/view-details/view-details';
+>>>>>>> e5a83e6c81e12c1a9e878e707ec76e5d7a0e3c33
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
@@ -32,10 +36,15 @@ firebase.initializeApp(config);
     HomePage,
     ListPage,
     OnboardingPage,
+<<<<<<< HEAD
     SignupPage
+=======
+    ViewDetailsPage
+>>>>>>> e5a83e6c81e12c1a9e878e707ec76e5d7a0e3c33
   ],
   imports: [
-    BrowserModule,
+
+  BrowserModule,
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(config),
 
@@ -46,7 +55,11 @@ firebase.initializeApp(config);
     HomePage,
     ListPage,
     OnboardingPage,
+<<<<<<< HEAD
     SignupPage
+=======
+    ViewDetailsPage
+>>>>>>> e5a83e6c81e12c1a9e878e707ec76e5d7a0e3c33
   ],
   providers: [
     StatusBar,

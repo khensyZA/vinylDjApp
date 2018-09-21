@@ -1,3 +1,48 @@
 page-onboarding {
-
+    #list {
+        width: 300px;
+        margin: 20px auto;
+        font-size: 20px;
+      }
+      #list ul {
+        margin-top: 10px;
+      }
+      #list ul li {
+        text-align: left;
+        list-style: disc;
+        margin: 20px 0px;
+      }
+      ion-content{
+        background-color: #EFEFEF !important;
+        font-family: 'Raleway';
+    }
+    .diag{
+        z-index:3;
+        width:100%;
+        top: 10;
+        height: 40%;
+    }
+    ion-icon{
+        margin-top: 10%;
+        font-size:7em;
+    }
+   
+      p{
+          width:60%;
+          display:block;
+          margin: 0 auto;
+          font-size: .9em;
+      }
+      .swiper-pagination-bullet-active{
+          background:#C400FF;
+      }
+      #btn{
+          text-align: center;
+      }
+      #slide1{
+          font-size: 8rem;
+      }
+    .P{
+        font-size: 11rem;  
+    } 
 }
