@@ -6,12 +6,6 @@ import { Component } from '@angular/core';
 import {Alert,AlertController,Loading,LoadingController, IonicPage, NavController } from 'ionic-angular';
 import 'firebase/database';
 import firebase from 'firebase/app';
-<<<<<<< HEAD
-=======
-import 'firebase/auth';
->>>>>>> 55d662ead93519ce80e632eacebcc1801eecf968
-
-
 /**
  * Generated class for the SiginPage page.
  *
