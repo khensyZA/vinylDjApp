@@ -28,7 +28,7 @@ resetPassword(){
   if(!this.email){
     console.log('enter email')
   }else{
-    this.authProvider.resetPassword(this.email).then(user=>{
+    this.authProvider.passwordreset(this.email).then(user=>{
       const alert:Alert= this.alertCtrl.create({
         message:'Check your email for the reset password link',
         buttons:[{
