@@ -1,5 +1,9 @@
-import { HttpClient } from '@angular/common/http';
+import { AngularFireAuth } from 'angularfire2/auth';
 import { Injectable } from '@angular/core';
+import firebase from 'firebase/app';
+import 'firebase/auth';
+import 'firebase/database';
+import 'rxjs/add/operator/map';
 
 /*
   Generated class for the AuthProvider provider.
@@ -9,9 +13,36 @@ import { Injectable } from '@angular/core';
 */
 @Injectable()
 export class AuthProvider {
+   userProfile:firebase.database.Reference;
+  data: any;
+  fireAuth: any;
+  
+  
+  constructor() {
+    this.fireAuth = firebase.auth();
+    this.userProfile = firebase.database().ref('users');
 
-  constructor(public http: HttpClient) {
     console.log('Hello AuthProvider Provider');
   }
+
+
+  
+
+   signupUser(account:{}){
+
+    
+     return this.fireAuth.createUserWithEmailAndPassword(account['Email'], account['Password']).then((newUser) => {
+       //sign in the user
+        this.fireAuth.signInWithEmailAndPassword(account['Email'], account['Password']).then((authenticatedUser) => {
+         //successful login, create user profile
+       this.userProfile.child( authenticatedUser.uid).set(
+         account
+       );
+       });
+      });
+
+}
+
+     
 
 }
