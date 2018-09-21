@@ -6,13 +6,50 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>signup</ion-title>
+  <ion-navbar text-center>
+  <ion-title>signup</ion-title>
   </ion-navbar>
 
 </ion-header>
 
-<button ion-button (click)="submit()" >SUBMIT</button>
+
 <ion-content padding>
+
+  <ion-item  class="item">
+    <ion-label color="dark" floating >First Name</ion-label>
+    <ion-icon name="person" item-left></ion-icon>
+    <ion-input [(ngModel)]="Firstname" type="email" ></ion-input>
+  </ion-item>
+
+    <ion-item  class="item">
+      <ion-label color="dark" floating >Last Name</ion-label>
+      <ion-icon name="person" item-left></ion-icon>
+       <ion-input [(ngModel)]="Lastname" type="email" ></ion-input>
+    </ion-item>
+
+
+  <ion-item  class="item">
+    <ion-label color="dark" floating >Email</ion-label>
+    <ion-icon name="mail" item-left></ion-icon>
+    <ion-input [(ngModel)]="Email" type="email" ></ion-input>
+  </ion-item>
+
+    <ion-item  class="item">
+        <ion-label color="dark" floating >Password</ion-label>
+        <ion-icon name="lock" item-left></ion-icon>
+        <ion-input [(ngModel)]="Password" type="password" ></ion-input>
+      </ion-item>
+
+      <ion-item  class="item">
+          <ion-label color="dark" floating >Confirm Password</ion-label>
+          <ion-icon name="lock" item-left></ion-icon>
+          <ion-input [(ngModel)]="Confirm" type="password" ></ion-input>
+        </ion-item>
+
+<br>
+
+<div padding text-center>
+   <button ion-button round (click)="submit()" > SUBMIT</button>     
+</div>
 
 </ion-content>
