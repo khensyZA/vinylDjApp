@@ -1,8 +1,8 @@
+import { SiginPage } from './../pages/sigin/sigin';
 import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import * as firebase from 'firebase';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 
@@ -12,7 +12,7 @@ import { ListPage } from '../pages/list/list';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = 'SiginPage';
+  rootPage: any = SiginPage;
 
   pages: Array<{title: string, component: any}>;
 

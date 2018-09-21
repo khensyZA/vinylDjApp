@@ -1,3 +1,4 @@
+import { SignupPage } from './../signup/signup';
 import { HomePage } from './../home/home';
 import { ResetPage } from './../reset/reset';
 import { AuthProvider } from './../../providers/auth/auth';
@@ -39,7 +40,7 @@ ionViewDidLoad() {
   console.log('ionViewDidLoad  SiginPage');
 }
 goToSignUp():void {
-  this.navCtrl.push('SignUpPage');
+  this.navCtrl.push(SignupPage);
 } 
 Google(){
 
@@ -83,7 +84,7 @@ signIn(){
     this.load.present()
     }
   }
-    forgetPassword(){
+  ForgotPassword(){
       this.navCtrl.setRoot('ResetPage');
     
   } 

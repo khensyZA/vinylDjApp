@@ -9,6 +9,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AuthProvider } from '../providers/auth/auth';
 import * as firebase from 'firebase'
+import { SiginPage } from '../pages/sigin/sigin';
+
 export const  config = {
 
   apiKey: "AIzaSyDprSLfvZ6XwAH4HmGZiqogiC1VRzoJsNQ",
@@ -26,7 +28,8 @@ firebase.initializeApp(config);
   declarations: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    SiginPage
   ],
   imports: [
     BrowserModule,
@@ -36,7 +39,8 @@ firebase.initializeApp(config);
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    SiginPage
   ],
   providers: [
     StatusBar,

@@ -25,14 +25,17 @@
 
 <button ion-button block round (click)="signIn()">Sign-in</button>
 
-<h2><button ion-button clear  (click)="forgetPassword()">forgot Password?</button></h2>
-<br>
+<div>
+    <h2><p>Forgot Password?<a (click)=" ForgotPassword()">Reset</a></p></h2>
+  </div>
+
 <h1><button ion-button   clear (click)="Google()" ><ion-icon name="logo-google">Login With Google</ion-icon> </button></h1>
 
   <br>
+<ion-item>
 
-   <h1><button ion-button clear>Have an account? sign-up</button></h1>
-
+   <h1><p>Have an account?<a (click)="goToSignUp()" >sign-up</a></p></h1>
+</ion-item>
 </ion-list>
       </ion-card-content>
 

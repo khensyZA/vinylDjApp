@@ -1,18 +1,83 @@
 <ion-header>
   <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+      </button>
+    <ion-title align="center" *ngIf="!isSearchbarOpened">Vinyl DJ App</ion-title>
+    <ion-searchbar *ngIf="isSearchbarOpened" showCancelButton="true" (ionCancel)="isSearchbarOpened=false" (search)="onSearch($even)"></ion-searchbar>
+    <ion-buttons end>
+      <button ion-button icon-only *ngIf="!isSearchbarOpened" (click)="isSearchbarOpened=true">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+    </ion-navbar>
+      <div class="search" *ngIf="isSearchbarOpened">
+        <div *ngFor="let topic of topics">
+          <p>{{topic}}</p>
+        </div>
+      </div>
 </ion-header>
-
 <ion-content padding>
-  <h3>Ionic Menu Starter</h3>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
+    <ion-row>
+        <ion-col col-6>
+            <ion-card (click)="goToDetails()">
+                <img src="../../assets/imgs/download.jpg" />
+                <div class="card-title">São Paulo</div>
+                <div class="card-subtitle">Baldwinoh Mahole</div>
+            </ion-card>
+        </ion-col>
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+        <ion-col col-6>
+            <ion-card (click)="goToDetails()">
+                <img src="../../assets/imgs/download.jpg" />
+                <div class="card-title">São Paulo</div>
+                <div class="card-subtitle">Baldwinoh Mahole</div>
+            </ion-card>
+        </ion-col>
+
+        <ion-col col-6>
+            <ion-card (click)="goToDetails()">
+                <img src="../../assets/imgs/download.jpg" />
+                <div class="card-title">São Paulo</div>
+                <div class="card-subtitle">Baldwinoh Mahole</div>
+            </ion-card>
+        </ion-col>
+        <ion-col col-6>
+            <ion-card (click)="goToDetails()">
+                <img src="../../assets/imgs/download.jpg" />
+                <div class="card-title">São Paulo</div>
+                <div class="card-subtitle">Baldwinoh Mahole</div>
+            </ion-card>
+        </ion-col>
+        <ion-col col-6>
+            <ion-card (click)="goToDetails()">
+                <img src="../../assets/imgs/download.jpg" />
+                <div class="card-title">São Paulo</div>
+                <div class="card-subtitle">Baldwinoh Mahole</div>
+            </ion-card>
+        </ion-col>
+        <ion-col col-6>
+            <ion-card (click)="goToDetails()">
+                <img src="../../assets/imgs/download.jpg" />
+                <div class="card-title">São Paulo</div>
+                <div class="card-subtitle">Baldwinoh Mahole</div>
+            </ion-card>
+        </ion-col>
+        <ion-col col-6>
+            <ion-card (click)="goToDetails()">
+                <img src="../../assets/imgs/download.jpg" />
+                <div class="card-title">São Paulo</div>
+                <div class="card-subtitle">Baldwinoh Mahole</div>
+            </ion-card>
+        </ion-col>
+        <ion-col col-6>
+            <ion-card (click)="goToDetails()">
+                <img src="../../assets/imgs/download.jpg" />
+                <div class="card-title">São Paulo</div>
+                <div class="card-subtitle">Baldwinoh Mahole</div>
+            </ion-card>
+        </ion-col>
+    </ion-row>
 </ion-content>
+>>>>>>> 217131aebb3433ed42f7a6691632aa080fd3e590
