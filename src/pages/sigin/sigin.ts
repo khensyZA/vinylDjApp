@@ -40,7 +40,7 @@ ionViewDidLoad() {
   console.log('ionViewDidLoad  SiginPage');
 }
 goToSignUp():void {
-  this.navCtrl.push(SignupPage);
+  this.navCtrl.push( SignupPage);
 } 
 Google(){
 
@@ -89,5 +89,7 @@ signIn(){
     
   } 
   
-
+  goback(){
+    this.navCtrl.setRoot(HomePage);
+   }
 }
