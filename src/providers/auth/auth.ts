@@ -13,36 +13,36 @@ import 'rxjs/add/operator/map';
 */
 @Injectable()
 export class AuthProvider {
-   userProfile:firebase.database.Reference;
-  data: any;
-  fireAuth: any;
-  
-  
-  constructor() {
-    this.fireAuth = firebase.auth();
-    this.userProfile = firebase.database().ref('users');
 
-    console.log('Hello AuthProvider Provider');
+  constructor() {
+
+  }
+  signIn(email:string,password:string):Promise<any>{
+    return firebase.auth().signInWithEmailAndPassword(email, password);
+  }
+  signOut():Promise<any>{
+    const userId:string = firebase.auth().currentUser.uid;
+    firebase.database().ref(`/userProfile/${userId}`).off();
+    return firebase.auth().signOut();
   }
 
+  passwordreset(email:string) {
+    var promise = new Promise((resolve, reject) => {
+      firebase.auth().sendPasswordResetEmail(email).then(() => {
+        resolve({ success: true });
+      }).catch((err) => {
+        reject(err);
+      })
+    })
+    return promise;
+  }
 
-  
-
-   signupUser(account:{}){
-
-    
-     return this.fireAuth.createUserWithEmailAndPassword(account['Email'], account['Password']).then((newUser) => {
-       //sign in the user
-        this.fireAuth.signInWithEmailAndPassword(account['Email'], account['Password']).then((authenticatedUser) => {
-         //successful login, create user profile
-       this.userProfile.child( authenticatedUser.uid).set(
-         account
-       );
-       });
-      });
-
-}
-
-     
-
+  signUp(email:string,password:string):Promise<any> {
+    return firebase.auth().createUserWithEmailAndPassword(email,password)
+    .then(newUserCred=>{
+      firebase.database().ref(`/userProfile/${newUserCred.user.uid}/email`).set(email);
+    }).catch(error=>{
+      throw new Error(error);
+    })
+  }
 }

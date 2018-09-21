@@ -11,44 +11,23 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class AccountProvider {
 
-
   userProfile:firebase.database.Reference;
-  
-    constructor() {
-    this.userProfile= firebase.database().ref(`userProfile`)
+  currentUser:User;
+
+  constructor() {
+
+    firebase.auth().onAuthStateChanged(user=>{
+      if(user){
+        this.currentUser=user;
+        this.userProfile=firebase.database().ref(`/userProfile/${user.uid}`)
+      }
+    })
   }
-   
-  
-  // getUserProfile():firebase.database.Reference{
-  //   return this.userProfile;
-  //   }
-  
-  
-  updateDetails(Firstname:string, Lastname:string,Email:string ):Promise<any>{
-      return this.userProfile.update({Firstname, Lastname,Email})
-    }
-  
-  
-  //   updateDOB(birthdate:string):Promise<any>{
-  // return this.userProfile.update({birthdate})
-  //   }
-  
-    // updatePassword(newPassword:string,oldPassword):Promise<any>{
-  
-    //   const credentials: firebase.auth.AuthCredential= firebase.auth.EmailAuthProvider.
-  
-    //   credential(this.currentUser.email, oldPassword);
-  
-    //   return this.currentUser.reauthenticateAndRetrieveDataWithCredential(credentials)
-    //   .then(user=>{
-    //     this.currentUser.updatePassword(newPassword).then(user=>{
-    //       console.log('password has been changed')
-    //     })
-    //   })
-    //   .catch(error=>{
-    //     console.log(error);
-    //   })
-    
-    // }
+  getUserProfile():firebase.database.Reference{
+    return this.userProfile;
+  }
+  updateName(firstName:string,lastName:string):Promise<any>{
+     return this.userProfile.update({firstName,lastName})
+  }
 
 }

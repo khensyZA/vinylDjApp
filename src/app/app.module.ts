@@ -19,12 +19,12 @@ import { ViewDetailsPage } from '../pages/view-details/view-details';
 
 
 export const config = {
-  apiKey: "AIzaSyBKVCYYBLvT7nWLgjkINb4nWrEN4MSQd_4",
-  authDomain: "vinyl-dj-app.firebaseapp.com",
-  databaseURL: "https://vinyl-dj-app.firebaseio.com",
-  projectId: "vinyl-dj-app",
-  storageBucket: "vinyl-dj-app.appspot.com",
-  messagingSenderId: "289547200801"
+  apiKey: "AIzaSyDLHFkSNF8TD6wR6x4-dWNiFZe6CFL4s4I",
+    authDomain: "vinyldjapp.firebaseapp.com",
+    databaseURL: "https://vinyldjapp.firebaseio.com",
+    projectId: "vinyldjapp",
+    storageBucket: "vinyldjapp.appspot.com",
+    messagingSenderId: "256212778849"
 };
 firebase.initializeApp(config);
 
