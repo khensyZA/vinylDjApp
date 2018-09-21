@@ -1,16 +1,83 @@
-// http://ionicframework.com/docs/theming/
+.menu-content{
+
+    background: black;
+   
+
+}
+.items{
+
+    background: black;
+    text-align:left;
+   
 
 
-// App Global Sass
-// --------------------------------------------------
-// Put style rules here that you want to apply globally. These
-// styles are for the entire app and not just one component.
-// Additionally, this file can be also used as an entry point
-// to import other Sass files to be included in the output CSS.
-//
-// Shared Sass variables, which can be used to adjust Ionic's
-// default Sass variables, belong in "theme/variables.scss".
-//
-// To declare rules for a specific mode, create a child rule
-// for the .md, .ios, or .wp mode classes. The mode class is
-// automatically applied to the <body> element in the app.
+}
+#button1{
+
+    background-color: rgba(0.0,0.0,0.0,0.4);
+     color:lightcoral;
+     font-style: normal;
+     font-size: 20px;
+}
+.icon1{
+
+    font-size:35px;
+    color:lightcoral;
+ }
+ #button2{
+
+    background-color: rgba(0.0,0.0,0.0,0.4);
+    color:blue;
+    font-style: normal;
+    font-size: 20px;
+}
+.icon2{
+
+   font-size:35px;
+   color:blue;
+  
+}
+#button3{
+
+    background-color: rgba(0.0,0.0,0.0,0.4);
+    color:red;
+    font-style: normal;
+    font-size: 20px;
+}
+.icon3{
+
+   font-size:35px;
+   color:red;
+}
+#button4{
+
+    background-color: rgba(0.0,0.0,0.0,0.4);
+    color:yellow;
+    font-style: normal;
+    font-size: 20px;
+}
+.icon4{
+
+   font-size:35px;
+   color:yellow;
+}
+#button5{
+
+    background-color: rgba(0.0,0.0,0.0,0.4);
+    color:fuchsia;
+    font-style: normal;
+    font-size:20px;
+}
+.icon5{
+
+   font-size:35px;
+   color:fuchsia;
+}
+ion-toolbar{
+
+    text-align: center;
+    color: white;
+    font-style: normal;
+    font-size:30px;
+
+}
