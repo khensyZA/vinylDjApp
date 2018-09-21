@@ -4,12 +4,10 @@ import { ResetPage } from './../reset/reset';
 import { AuthProvider } from './../../providers/auth/auth';
 import { Component } from '@angular/core';
 import {Alert,AlertController,Loading,LoadingController, IonicPage, NavController } from 'ionic-angular';
- 
-   import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook';
-   import 'firebase/database';
-   import firebase from 'firebase/app';
-   import 'firebase/auth';
-import { GooglePlus} from '@ionic-native/google-plus'
+import 'firebase/database';
+import firebase from 'firebase/app';
+import 'firebase/auth';
+
 
 /**
  * Generated class for the SiginPage page.
@@ -32,7 +30,6 @@ export class SiginPage {
     constructor(public navCtrl: NavController,
        private alertCtrl:AlertController,
        private loadingCTR: LoadingController, 
-       private googlePlus:GooglePlus,
        private authProvider:AuthProvider ) {
     }
   
@@ -47,19 +44,6 @@ Google(){
   let loader = this.loadingCTR.create({
     content: 'Please wait'
   })
-this.googlePlus.login({
-  'webClientId':'908551573279-684ilec02l8bq4o57eqmujprhpubb6nj.apps.googleusercontent.com',
-  'offline':true
-}).then(res=>{
-  firebase.auth().signInWithCredential(firebase.auth.GoogleAuthProvider.credential(res.idToken)).then(suc=>{
-    loader.dismiss();
-    alert("Login success");
-    this.navCtrl.setRoot('HomePage');
-  }).catch(ns=>{
-    loader.dismiss();
-    alert("Not success")
-  })
-})
 
 }
 signIn(){
