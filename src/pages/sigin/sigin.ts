@@ -50,7 +50,7 @@ signIn(){
     this.authProvider.signIn(this.email, this.password)
     .then(authData=>{
       this.load.dismiss().then(()=>{
-    this.navCtrl.setRoot('HomePage');
+    this.navCtrl.setRoot(HomePage);
       })
     },error=>{
       this.load.dismiss().then(()=>{
@@ -65,7 +65,7 @@ signIn(){
     this.load.present()
     }
   }
-  ForgotPassword(){
+  forgotPassword(){
       this.navCtrl.setRoot('ResetPage');
     
   } 

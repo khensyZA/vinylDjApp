@@ -32,7 +32,7 @@ passwordreset(email:string) {
       })
     })
     return promise;
-  }
+}
 signUp(email:string,password:string):Promise<any> {
     return firebase.auth().createUserWithEmailAndPassword(email,password)
     .then(newUserCred=>{

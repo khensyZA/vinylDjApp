@@ -1,6 +1,7 @@
 import { AuthProvider } from './../../providers/auth/auth';
 import { Component } from '@angular/core';
 import { Alert, AlertController, IonicPage, NavController, NavParams } from 'ionic-angular';
+import { HomePage } from '../home/home';
 
 
 /**
@@ -35,7 +36,7 @@ resetPassword(){
           text:'ok',
           role:'cancel',
           handler:()=>{
-            this.navCtrl.pop()
+            this.navCtrl.push(HomePage);
           }
         }]
       })
