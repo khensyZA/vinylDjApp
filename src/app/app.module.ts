@@ -14,6 +14,7 @@ import { AuthProvider } from '../providers/auth/auth';
 import { OnboardingPage } from '../pages/onboarding/onboarding';
 import { AccountProvider } from '../providers/account/account';
 import { ViewDetailsPage } from '../pages/view-details/view-details';
+import { ResetPage } from '../pages/reset/reset';
 
 
 
@@ -35,6 +36,7 @@ firebase.initializeApp(config);
     HomePage,
     ListPage,
     OnboardingPage,
+    ResetPage,
     SignupPage,
     SiginPage,
     UserprofilePage,
@@ -53,6 +55,7 @@ firebase.initializeApp(config);
     ListPage,
     OnboardingPage,
     ViewDetailsPage,
+    ResetPage,
     SignupPage,
     SiginPage,
     UserprofilePage,

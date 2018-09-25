@@ -8,6 +8,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
+import { AuthProvider } from '../providers/auth/auth';
 @Component({
   templateUrl: 'app.html'
 })
@@ -20,7 +21,7 @@ export class MyApp {
   private SignupPage;
   private SiginPage;
 
-  constructor(public platform: Platform,public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(public platform: Platform,public statusBar: StatusBar, public splashScreen: SplashScreen,private auth:AuthProvider) {
     this.initializeApp();
     this.HomePage =HomePage;
     this.UserprofilePage= UserprofilePage;
@@ -41,5 +42,11 @@ export class MyApp {
   
     openPage(page) {
       this.rootPage =page; 
+  }
+  signOut(){
+    this.auth.signOut().then(() => {
+      alert("you have successfully signed out")
+      this.rootPage(OnboardingPage);
+    });
   }
 }

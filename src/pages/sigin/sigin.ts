@@ -66,7 +66,7 @@ signIn(){
     }
   }
   forgotPassword(){
-      this.navCtrl.setRoot('ResetPage');
+      this.navCtrl.push(ResetPage);
     
   } 
   
