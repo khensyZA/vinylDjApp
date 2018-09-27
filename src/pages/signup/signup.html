@@ -7,7 +7,9 @@
 <ion-header>
 
   <ion-navbar text-center>
-  <ion-title>signup</ion-title>
+    <ion-title> <ion-buttons style="float:left">
+      <button ion-button icon-only   (click)="goback()" ><ion-icon name="md-arrow-round-back"></ion-icon></button>
+    </ion-buttons>Create Account</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -49,7 +51,7 @@
 <br>
 
 <div padding text-center>    
-   <button ion-button round (click)="signUp()"> SUBMIT</button>     
+   <button ion-button block round (click)="signUp()"> SUBMIT</button>     
 </div>
 
 </ion-content>

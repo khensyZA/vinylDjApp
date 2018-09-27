@@ -34,7 +34,7 @@ ionViewDidLoad() {
   console.log('ionViewDidLoad  SiginPage');
 }
 goToSignUp():void {
-  this.navCtrl.push( SignupPage);
+  this.navCtrl.setRoot( SignupPage);
 } 
 Google(){
 
