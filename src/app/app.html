@@ -1,6 +1,6 @@
 <ion-menu [content]="content">
   <ion-header>
-    <ion-toolbar color="primary">
+    <ion-toolbar >
       <ion-title>Menu</ion-title>
     </ion-toolbar>
   </ion-header>
@@ -27,7 +27,7 @@
         SignIn
     </button></ion-item>
     
-    <ion-item class="items"><button id="button5" ion-item menuClose (click)="openPage(HomePage)">
+    <ion-item class="items"><button id="button5" ion-item menuClose (click)="signOut()">
         <ion-icon class="icon5" name="md-log-out"></ion-icon>
         SignOut
     </button></ion-item>

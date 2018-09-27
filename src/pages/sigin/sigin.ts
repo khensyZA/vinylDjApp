@@ -34,7 +34,7 @@ ionViewDidLoad() {
   console.log('ionViewDidLoad  SiginPage');
 }
 goToSignUp():void {
-  this.navCtrl.push( SignupPage);
+  this.navCtrl.setRoot( SignupPage);
 } 
 Google(){
 
@@ -50,7 +50,7 @@ signIn(){
     this.authProvider.signIn(this.email, this.password)
     .then(authData=>{
       this.load.dismiss().then(()=>{
-    this.navCtrl.setRoot('HomePage');
+    this.navCtrl.setRoot(HomePage);
       })
     },error=>{
       this.load.dismiss().then(()=>{
@@ -65,8 +65,8 @@ signIn(){
     this.load.present()
     }
   }
-  ForgotPassword(){
-      this.navCtrl.setRoot('ResetPage');
+  forgotPassword(){
+      this.navCtrl.push(ResetPage);
     
   } 
   

@@ -53,5 +53,25 @@ export class SignupPage {
       this.load = this.loadingCTR.create();
       this.load.present();
     }
+{
+  {
+    let alert: Alert =this.alertCTR.create({
+      message:" Congratulations ",
+      buttons:[{
+        text:'OK',
+        handler:data=>{
+        this.navCtrl.setRoot(HomePage)
+        }
+    
+      }]
+     })
+     alert.present();
+    }
+}
+
+
   }
+  goback(){
+    this.navCtrl.setRoot(HomePage);
+   }
 } 

@@ -15,8 +15,6 @@ export class AuthProvider {
   constructor() {
   }
   signOut():Promise<any>{
-    const userId:string = firebase.auth().currentUser.uid;
-    firebase.database().ref(`/userProfile/${userId}`).off();
     return firebase.auth().signOut();
   }
   //authenication using email & 
@@ -32,7 +30,7 @@ passwordreset(email:string) {
       })
     })
     return promise;
-  }
+}
 signUp(email:string,password:string):Promise<any> {
     return firebase.auth().createUserWithEmailAndPassword(email,password)
     .then(newUserCred=>{

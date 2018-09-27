@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { ViewDetailsPage } from './../view-details/view-details';
+import { AuthProvider } from '../../providers/auth/auth';
+import { OnboardingPage } from '../onboarding/onboarding';
 
 
 
@@ -14,12 +16,13 @@ export class HomePage {
 
   topics=[];
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController,private auth:AuthProvider) {
      this.generateTopics();
   }
   generateTopics(){
     this.topics=["Dj clock","DJ balck Coffee","Dj ganyani"];
   }
+
   getTopics(ev:any){
      this.generateTopics();
      let serVal=ev.target.value;
